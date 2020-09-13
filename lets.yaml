@@ -5,7 +5,7 @@ commands:
     cmd: gofmt -w -s .
   test:
     description: Run test specs
-    cmd: go test github.com/xXxRisingTidexXx/cryptography-labs
+    cmd: go clean -testcache && go test github.com/xXxRisingTidexXx/cryptography-labs
   lint:
     description: Lint the source code
     cmd: golangci-lint run
