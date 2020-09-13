@@ -20,5 +20,9 @@ type Alphabet struct {
 }
 
 func (alphabet *Alphabet) Get(char rune, shift int) rune {
-	return alphabet.runes[(alphabet.indices[char]+shift)%len(alphabet.runes)]
+	index := (alphabet.indices[char]+shift)%len(alphabet.runes)
+	if index < 0 {
+		index += len(alphabet.runes)
+	}
+	return alphabet.runes[index]
 }
