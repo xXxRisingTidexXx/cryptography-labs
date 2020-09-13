@@ -5,24 +5,24 @@ var DefaultAlphabet = NewAlphabet(
 		"мнопрстуфхцчшщьюя .,-!?",
 )
 
-func NewAlphabet(chars string) *Alphabet {
-	runes := []rune(chars)
-	indices := make(map[rune]int, len(runes))
-	for i, char := range runes {
+func NewAlphabet(letters string) *Alphabet {
+	chars := []rune(letters)
+	indices := make(map[rune]int, len(chars))
+	for i, char := range chars {
 		indices[char] = i
 	}
-	return &Alphabet{runes, indices}
+	return &Alphabet{chars, indices}
 }
 
 type Alphabet struct {
-	runes   []rune
+	chars   []rune
 	indices map[rune]int
 }
 
-func (alphabet *Alphabet) Get(char rune, shift int) rune {
-	index := (alphabet.indices[char]+shift)%len(alphabet.runes)
+func (alphabet *Alphabet) Shift(char rune, shift int) rune {
+	index := (alphabet.indices[char] + shift) % len(alphabet.chars)
 	if index < 0 {
-		index += len(alphabet.runes)
+		index += len(alphabet.chars)
 	}
-	return alphabet.runes[index]
+	return alphabet.chars[index]
 }

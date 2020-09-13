@@ -31,7 +31,7 @@ func (gronsfeld *gronsfeld) transform(text, key string, direction int) string {
 	}
 	newRunes := make([]rune, len(textRunes))
 	for i := range textRunes {
-		newRunes[i] = gronsfeld.alphabet.Get(textRunes[i], direction*shifts[i%len(shifts)])
+		newRunes[i] = gronsfeld.alphabet.Shift(textRunes[i], direction*shifts[i%len(shifts)])
 	}
 	return string(newRunes)
 }
