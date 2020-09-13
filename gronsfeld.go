@@ -20,7 +20,7 @@ func (gronsfeld *gronsfeld) Encrypt(text, key string) string {
 
 func (gronsfeld *gronsfeld) transform(text, key string, direction int) string {
 	if text == "" || key == "" {
-		return ""
+		return text
 	}
 	textRunes, keyRunes := []rune(text), []rune(key)
 	shifts := make([]int, len(keyRunes))
