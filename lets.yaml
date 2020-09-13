@@ -1,0 +1,11 @@
+shell: bash
+commands:
+  gofmt:
+    description: Format the source code
+    cmd: gofmt -w -s .
+  test:
+    description: Run test specs
+    cmd: go test github.com/xXxRisingTidexXx/cryptography-labs
+  lint:
+    description: Lint the source code
+    cmd: golangci-lint run
