@@ -30,3 +30,11 @@ func (alphabet *Alphabet) Shift(char rune, shift int) rune {
 	}
 	return alphabet.chars[index]
 }
+
+func (alphabet *Alphabet) Char(index int) rune {
+	return alphabet.chars[index]
+}
+
+func (alphabet *Alphabet) Index(char rune) int {
+	return alphabet.indices[char]
+}
