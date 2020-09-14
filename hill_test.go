@@ -6,13 +6,19 @@ import (
 )
 
 func TestHill(t *testing.T) {
+	//testCipher(
+	//	t,
+	//	cryptolabs.NewHill(cryptolabs.DefaultAlphabet),
+	//	&spec{"", "", ""},
+	//	&spec{"Abeceda", "", "Abeceda"},
+	//	&spec{"", "нАдіЙний клЮч", ""},
+	//	&spec{"Невалідний ключ", "-sjfdls", "Невалідний ключ"},
+	//	&spec{"HILL", "2020", ""},
+	//)
 	testCipher(
 		t,
-		cryptolabs.NewHill(cryptolabs.DefaultAlphabet),
-		&spec{"", "", ""},
-		&spec{"Abeceda", "", "Abeceda"},
-		&spec{"", "нАдіЙний клЮч", ""},
-		//&spec{"Невалідний ключ", "-sjfdls", "Невалідний ключ"},
-		//&spec{"HILL", "2020", ""},
+		cryptolabs.NewHill(cryptolabs.EnglishAlphabet),
+		&spec{"ACT", "GYBNQKURP", "POH"},
+		&spec{"YIUQ", "ABDB", "ICQY"},
 	)
 }
