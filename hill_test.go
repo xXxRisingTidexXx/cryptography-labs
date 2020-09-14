@@ -12,7 +12,7 @@ func TestHill(t *testing.T) {
 		&spec{"", "", ""},
 		&spec{"Abeceda", "", "Abeceda"},
 		&spec{"", "нАдіЙний клЮч", ""},
-		&spec{"Невалідний ключ", "-sjfdls", "Невалідний ключ"},
-		&spec{"HILL", "2020", ""},
+		//&spec{"Невалідний ключ", "-sjfdls", "Невалідний ключ"},
+		//&spec{"HILL", "2020", ""},
 	)
 }
