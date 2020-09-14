@@ -1,0 +1,15 @@
+run:
+  concurrency: 4
+  timeout: 30s
+linters:
+  enable-all: true
+  disable:
+    - wsl
+    - gochecknoglobals
+    - goimports
+    - goerr113
+    - gochecknoinits
+    - gofumpt
+    - noctx
+    - nlreturn
+    - gci
