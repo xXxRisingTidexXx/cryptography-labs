@@ -5,6 +5,10 @@ var DefaultAlphabet = NewAlphabet(
 		"мнопрстуфхцчшщьюя .,-!?",
 )
 
+var EnglishAlphabet = NewAlphabet("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+
+var UkrainianAlphabet = NewAlphabet("АБВГҐДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯ")
+
 func NewAlphabet(letters string) *Alphabet {
 	chars := []rune(letters)
 	indices := make(map[rune]int, len(chars))
