@@ -23,18 +23,14 @@ type Alphabet struct {
 	indices map[rune]int
 }
 
+func (alphabet *Alphabet) Length() int {
+	return len(alphabet.chars)
+}
+
 func (alphabet *Alphabet) Shift(char rune, shift int) rune {
-	index := (alphabet.indices[char] + shift) % len(alphabet.chars)
-	if index < 0 {
-		index += len(alphabet.chars)
-	}
-	return alphabet.chars[index]
+	return alphabet.chars[mod((alphabet.indices[char]+shift)%len(alphabet.chars), len(alphabet.chars))]
 }
 
 func (alphabet *Alphabet) Char(index int) rune {
-	return alphabet.chars[index]
-}
-
-func (alphabet *Alphabet) Index(char rune) int {
-	return alphabet.indices[char]
+	return alphabet.chars[mod(index, len(alphabet.chars))]
 }
