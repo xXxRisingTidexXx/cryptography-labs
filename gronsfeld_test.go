@@ -8,7 +8,7 @@ import (
 func TestGronsfeld(t *testing.T) {
 	testCipher(
 		t,
-		cryptolabs.Gronsfeld,
+		cryptolabs.NewGronsfeld(cryptolabs.DefaultAlphabet),
 		&spec{"", "", ""},
 		&spec{"Abeceda", "", "Abeceda"},
 		&spec{"", "нАдіЙний клЮч", ""},

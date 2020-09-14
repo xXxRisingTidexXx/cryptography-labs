@@ -4,8 +4,6 @@ import (
 	"unicode"
 )
 
-var Gronsfeld = NewGronsfeld(DefaultAlphabet)
-
 func NewGronsfeld(alphabet *Alphabet) Cipher {
 	return &gronsfeld{alphabet}
 }
