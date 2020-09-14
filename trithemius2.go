@@ -9,9 +9,18 @@ type trithemius2 struct {
 }
 
 func (trithemius2 *trithemius2) Encrypt(text, _ string) string {
-	return text
+	return trithemius2.transform(text, 1)
+}
+
+func (trithemius2 *trithemius2) transform(text string, direction int) string {
+	runes := []rune(text)
+	newRunes := make([]rune, len(runes))
+	for i := range runes {
+		newRunes[i] = trithemius2.alphabet.Shift(runes[i], direction*i)
+	}
+	return string(newRunes)
 }
 
 func (trithemius2 *trithemius2) Decrypt(text, _ string) string {
-	return text
+	return trithemius2.transform(text, -1)
 }
