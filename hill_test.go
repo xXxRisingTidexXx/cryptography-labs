@@ -8,7 +8,7 @@ import (
 func TestHill(t *testing.T) {
 	testCipher(
 		t,
-		cryptolabs.Hill,
+		cryptolabs.NewHill(cryptolabs.DefaultAlphabet),
 		&spec{"", "", ""},
 		&spec{"Abeceda", "", "Abeceda"},
 		&spec{"", "нАдіЙний клЮч", ""},

@@ -4,8 +4,6 @@ import (
 	"gonum.org/v1/gonum/mat"
 )
 
-var Hill = NewHill(DefaultAlphabet)
-
 func NewHill(alphabet *Alphabet) Cipher {
 	return &hill{alphabet}
 }
