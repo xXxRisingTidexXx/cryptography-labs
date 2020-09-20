@@ -7,9 +7,14 @@ func NewXOR() Cipher {
 type xor struct{}
 
 func (xor *xor) Encrypt(text, key string) string {
-	return text
+	textRunes, keyRunes := []rune(text), []rune(key)
+	newRunes := make([]rune, len(textRunes))
+	for i := range textRunes {
+		newRunes[i] = textRunes[i] ^ keyRunes[i%len(keyRunes)]
+	}
+	return string(newRunes)
 }
 
 func (xor *xor) Decrypt(text, key string) string {
-	return text
+	return xor.Encrypt(text, key)
 }
