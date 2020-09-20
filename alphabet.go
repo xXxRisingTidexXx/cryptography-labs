@@ -35,10 +35,6 @@ func (alphabet *Alphabet) Char(index int) rune {
 	return alphabet.chars[mod(index, len(alphabet.chars))]
 }
 
-func (alphabet *Alphabet) Code(char1, char2 rune) rune {
-	return alphabet.Shift(char1, alphabet.indices[char2])
-}
-
-func (alphabet *Alphabet) Text(char1, char2 rune) rune {
-	return alphabet.Shift(char1, -alphabet.indices[char2])
+func (alphabet *Alphabet) Modulo(char1, char2 rune, direction int) rune {
+	return alphabet.Shift(char1, direction*alphabet.indices[char2])
 }
