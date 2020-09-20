@@ -1,13 +1,45 @@
 package cryptolabs
 
+import (
+	"strconv"
+	"strings"
+)
+
 func NewMagicSquare() Cipher {
-	return &magicSquare{}
+	return &magicSquare{'_'}
 }
 
-type magicSquare struct{}
+type magicSquare struct {
+	dummy rune
+}
 
 func (square *magicSquare) Encrypt(text string, key string) string {
-	return text
+	textRunes := []rune(text)
+	keyStrings := strings.Split(key, ",")
+	if _, ok := sqrt(len(keyStrings)); !ok {
+		return text
+	}
+	mappings := make([]int, len(keyStrings))
+	for i := range keyStrings {
+		value, err := strconv.ParseInt(keyStrings[i], 10, 64)
+		if err != nil || value < 1 || int(value) > len(keyStrings) {
+			return text
+		}
+		mappings[value] = i
+	}
+	length := len(textRunes)
+	if modulo := length % len(keyStrings); modulo != 0 {
+		length += len(keyStrings) - modulo
+	}
+	newRunes := make([]rune, length)
+	for i := range newRunes {
+		newRunes[i] = square.dummy
+	}
+	for i := range textRunes {
+		modulo := i % len(keyStrings)
+		newRunes[i-modulo+mappings[modulo]] = textRunes[i]
+	}
+	return string(newRunes)
 }
 
 func (square *magicSquare) Decrypt(text string, key string) string {

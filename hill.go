@@ -18,15 +18,15 @@ func (hill *hill) Encrypt(text, key string) string {
 		return text
 	}
 	textRunes, keyRunes := []rune(text), []rune(key)
-	modulo := int(math.Floor(math.Sqrt(float64(len(keyRunes)))))
-	if modulo*modulo != len(keyRunes) || len(textRunes)%modulo != 0 {
+	modulo, ok := sqrt(len(keyRunes))
+	if !ok || len(textRunes)%modulo != 0 {
 		return text
 	}
 	matrix := mat.NewDense(modulo, modulo, nil)
 	for i := range keyRunes {
 		matrix.Set(i/modulo, i%modulo, float64(hill.alphabet.indices[keyRunes[i]]))
 	}
-	if gcd, _, _ := gcd(int(math.Round(mat.Det(matrix))), hill.alphabet.Length()); gcd != 1 {
+	if gcd, _ := gcd(int(math.Round(mat.Det(matrix))), hill.alphabet.Length()); gcd != 1 {
 		return text
 	}
 	newRunes := make([]rune, len(textRunes))
@@ -48,8 +48,8 @@ func (hill *hill) Decrypt(text, key string) string {
 		return text
 	}
 	textRunes, keyRunes := []rune(text), []rune(key)
-	modulo := int(math.Floor(math.Sqrt(float64(len(keyRunes)))))
-	if modulo*modulo != len(keyRunes) || len(textRunes)%modulo != 0 {
+	modulo, ok := sqrt(len(keyRunes))
+	if !ok || len(textRunes)%modulo != 0 {
 		return text
 	}
 	matrix := mat.NewDense(modulo, modulo, nil)
@@ -57,7 +57,7 @@ func (hill *hill) Decrypt(text, key string) string {
 		matrix.Set(i/modulo, i%modulo, float64(hill.alphabet.indices[keyRunes[i]]))
 	}
 	det := int(math.Round(mat.Det(matrix)))
-	gcd, inverse, _ := gcd(det, len(hill.alphabet.chars))
+	gcd, inverse := gcd(det, len(hill.alphabet.chars))
 	if gcd != 1 {
 		return text
 	}
