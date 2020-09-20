@@ -28,9 +28,17 @@ func (alphabet *Alphabet) Length() int {
 }
 
 func (alphabet *Alphabet) Shift(char rune, shift int) rune {
-	return alphabet.chars[mod((alphabet.indices[char]+shift)%len(alphabet.chars), len(alphabet.chars))]
+	return alphabet.Char(alphabet.indices[char] + shift)
 }
 
 func (alphabet *Alphabet) Char(index int) rune {
 	return alphabet.chars[mod(index, len(alphabet.chars))]
+}
+
+func (alphabet *Alphabet) Code(char1, char2 rune) rune {
+	return alphabet.Shift(char1, alphabet.indices[char2])
+}
+
+func (alphabet *Alphabet) Text(char1, char2 rune) rune {
+	return alphabet.Shift(char1, -alphabet.indices[char2])
 }
