@@ -13,7 +13,7 @@ type magicSquare struct {
 	dummy rune
 }
 
-func (square *magicSquare) Encrypt(text string, key string) string {
+func (square *magicSquare) Encrypt(text, key string) string {
 	textRunes := []rune(text)
 	keyStrings := strings.Split(key, ",")
 	if _, ok := sqrt(len(keyStrings)); !ok {
@@ -25,7 +25,7 @@ func (square *magicSquare) Encrypt(text string, key string) string {
 		if err != nil || value < 1 || int(value) > len(keyStrings) {
 			return text
 		}
-		mappings[value] = i
+		mappings[value-1] = i
 	}
 	length := len(textRunes)
 	if modulo := length % len(keyStrings); modulo != 0 {
@@ -42,6 +42,24 @@ func (square *magicSquare) Encrypt(text string, key string) string {
 	return string(newRunes)
 }
 
-func (square *magicSquare) Decrypt(text string, key string) string {
-	return text
+func (square *magicSquare) Decrypt(text, key string) string {
+	textRunes := []rune(text)
+	keyStrings := strings.Split(key, ",")
+	if _, ok := sqrt(len(keyStrings)); !ok {
+		return text
+	}
+	mappings := make([]int, len(keyStrings))
+	for i := range keyStrings {
+		value, err := strconv.ParseInt(keyStrings[i], 10, 64)
+		if err != nil || value < 1 || int(value) > len(keyStrings) {
+			return text
+		}
+		mappings[i] = int(value) - 1
+	}
+	newRunes := make([]rune, len(textRunes))
+	for i := range textRunes {
+		modulo := i % len(keyStrings)
+		newRunes[i-modulo+mappings[modulo]] = textRunes[i]
+	}
+	return strings.ReplaceAll(string(newRunes), string(square.dummy), "")
 }
