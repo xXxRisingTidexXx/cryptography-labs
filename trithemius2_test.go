@@ -17,11 +17,11 @@ func TestTrithemius2(t *testing.T) {
 				"in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat c" +
 				"upidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
 			"",
-			"Lpthq?owАГwFpБzГЄLИБЙPwЗВОWVҐННУИЗЧЙЩЮЩhКОФЯЦґТЩвЩsЩґвкzyмггВднДзкчцсфкЙяочюю,Рш.фюч щICJЮMMб" +
-				"G,!MQEжGWіIUSWaOоYNUcQфSeclqXяяUu,hrnsBimExuАwБKЇwЕВvЖTSЛРЗРXНПФЦХЩЙfМгОЯОХґПеЩггsїґдШжЯї" +
-				"АібгнсйфЖсншпЙ  Ммшц,Bщ!ФшJЧюшЬяGFGJ?LдBOOUHUZGaммцfUfсPkkWцcmqocяdpnrv?ouCАoАГrvtГuwИВКQ" +
-				"ДІTСЛЙУПФЕЦЇdЮЛУСаjРвгУoУЬбвїдvЮижїмґВеуДицймзщЇх хцмО п!щтDFDШШеNя,IN?QOдRIOVиSHIHMLKeпP" +
-				"ieYUSmUoщkmm qtrmikuБFEГЕАЄJyҐMvКЕІxSЛРЗWНЗИКЗМЗeКМЮОЯгЬґnЯвабЯіuЧжґзzєгВесуЕнєзучюфЛ",
+			"Lpthq?owАГwDpБzГЄJИБЙNwЗВОUTҐННУИЗЧЙЩЮЩfКОФЯЦґТЩвЩqЩґвкxwмггАднГзкчцсфкІяочюю,Ош.фюч щGAHЩKKЯ" +
+				"E,!KOCеEUзGSQUYMмWLSaOтQcajoVььSs fplq?gkAvsyuzGИuҐАtЕPOЙОЄОTЛНТФУЧІbКбМЬМУвНґЧббoивгЦеЬи" +
+				"wзЯблпітҐплцнЗююЇкцф ?ч,РцFУщцЦьCBCF-Hб?KKQDQVCWїїфbQbнLggSтYimkYшZljnr.kq!wkwznrpzqsЕyИK" +
+				"БЄNНІЗПЛРВТЖXЧІПНЩdМЮЯПiПЦЬЮжбpЧеґжїаwвпzетзїдхЕсщстїЇщл хо?\"?ТТвHшюCH.KIЯLCIPґMBCBGFEYй" +
+				"JcYSOMgOiуeggчknlgceov?!xАuБBsyEpЖАДrKЗКГOІГҐЖГИГWЖИХЇЦЬФЮfЦЩЧШЦдmСвЮгrбЬuалнyібгнсхоЄ",
 		},
 		&spec{
 			"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",

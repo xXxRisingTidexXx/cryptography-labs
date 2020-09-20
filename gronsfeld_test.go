@@ -21,11 +21,12 @@ func TestGronsfeld(t *testing.T) {
 				"in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat c" +
 				"upidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
 			"2018347758430219873",
-			"Nosmp!pwxВq-dqmxzBvkt.ipiАD?ksqsgdВmАxt blltpzhqrj gmrБD-ueeCgsBlnВwpof.Вmtsqr.qqgpknlyqt,vВC" +
-				"sddosm-iАBiwprrg.vinqc btluБhACYw goruBdf nqqmtBАmrlao-DyБlu owvxyБiCiАetdrБhwkooCxpshrks" +
-				"-lccxzpv,njАl!БА?iplqwjyClА,ebCfstttls-cqoБmxxct,CGypz?iywe,jАВyh,dptrvBpsCvhptfqmuggrjБ-" +
-				"muBАwpxpvbВmBygljБ-izzjCgllnvvCkrnosm-iБBkВklav.wВsoc qiumhАzz?-EzdnxАhwr.АlrАBtkgdeebВCj" +
-				"xrieiweАBswr-ptprllqv,.АxrАBnv!funqjCxxk pnimjpfChhsgsГvА-oomtlxBhsqq-if.nАА-nacwuytC",
+			"Nosmp!pwxВq-dqmxz\"vkt.ipiАB?ksqsgdВmАxt blltpzhqrj gmrБB-ueeAgs\"lnВwpof.Вmtsqr.qqgpknlyqt,v" +
+				"ВAsddosm-iА\"iwprrg.vinqc btluБh'AYw goru\"df nqqmt\"Аmrlao-ByБlu owvxyБiAiАetdrБhwkooAxp" +
+				"shrks-lccxzpv,njАl!БА?iplqwjyAlА,ebAfstttls-cqoБmxxct,AGypz?iywe,jАВyh,dptrv\"psAvhptfqmu" +
+				"ggrjБ-mu\"АwpxpvbВm\"ygljБ-izzjAgllnvvAkrnosm-iБ\"kВklav.wВsoc qiumhАzz?-EzdnxАhwr.АlrА\"" +
+				"tkgdeebВAjxrieiweА\"swr-ptprllqv,.АxrА\"nv!funqjAxxk pnimjpfAhhsgsГvА-oomtlx\"hsqq-if.nАА" +
+				"-nacwuytA",
 		},
 		&spec{
 			"aaaAAAAAaaaaaAAAaaaaaAAAAaaaAAAaaaAAAAAAAAAAaaaAAaaaaAAAAAaaAAaaAAAAaAAa",
@@ -36,8 +37,8 @@ func TestGronsfeld(t *testing.T) {
 			"Думи мої, думи мої, Лихо мені з вами! Нащо стали на папері Сумними рядами?.. Чом вас вітер не" +
 				" розвіяв В степу, як пилину? Чом вас лихо не приспало, Як свою дитину?...",
 			"19203984138913",
-			"Еяои-хцм--йянй.хрї?DУкцсCхєрїDі дзфк?-Хзьс.ьфаопCсб-чзрзср,СцххкнйCщ жбхї?!ECЮппCібф.ійтзщCсє" +
-				"-шчидїCґ ДDщцєтюF.,лDсиопхчA-вчн-гзу оп т.ркDруіьсаочE!анCьгсяDєихпхчA!DE",
+			"Еяои-хцм--йянй.хрї?BУкцсAхєрїBі дзфк?-Хзьс.ьфаопAсб-чзрзср,СцххкнйAщ жбхї?!CAЮппAібф.ійтзщAсє" +
+				"-шчидїAґ ДBщцєтюD.,лBсиопхч'-вчн-гзу оп т.ркBруіьсаочC!анAьгсяBєихпхч'!BC",
 		},
 	)
 }

@@ -2,7 +2,7 @@ package cryptolabs
 
 var DefaultAlphabet = NewAlphabet(
 	"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzАБВГҐДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯабвгґдеєжзиіїйкл" +
-		"мнопрстуфхцчшщьюя .,-!?",
+		"мнопрстуфхцчшщьюя .,-!?'\"",
 )
 
 var EnglishAlphabet = NewAlphabet("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
@@ -28,9 +28,13 @@ func (alphabet *Alphabet) Length() int {
 }
 
 func (alphabet *Alphabet) Shift(char rune, shift int) rune {
-	return alphabet.chars[mod((alphabet.indices[char]+shift)%len(alphabet.chars), len(alphabet.chars))]
+	return alphabet.Char(alphabet.indices[char] + shift)
 }
 
 func (alphabet *Alphabet) Char(index int) rune {
 	return alphabet.chars[mod(index, len(alphabet.chars))]
+}
+
+func (alphabet *Alphabet) Modulo(char1, char2 rune, direction int) rune {
+	return alphabet.Shift(char1, direction*alphabet.indices[char2])
 }
