@@ -13,3 +13,4 @@ linters:
     - noctx
     - nlreturn
     - gci
+    - gomnd
