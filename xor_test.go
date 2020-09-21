@@ -36,5 +36,10 @@ func TestXOR(t *testing.T) {
 			"  KNOoqw0)(*@8328eu334%THTrhglc/z/xc.zx kz;dcpweo*(*jsaowdewfew)))(Ud3dkqjsakxb",
 			"вѶЌѳѷіQзЅЛЖБЎѾѥЌЅѐе\x13‧\x14бЗЍxRСљLСѹсБXУМяXДѕZЊњЭ\\WхѝП\bНњSўёжЦЦшJEоЙѨѫѧuѝ\x13іѕъФ]",
 		},
+		&spec{
+			"COVID-19 вже надоїв. Хочемо в університет.",
+			"NIKHNIUH87jh9ih nv_))O09jf3rihjefsdfhnk",
+			"\r\x06\x1d\x01\nddq\x18Ѕќѝ\x19єјДѐСѭ\a\tѪЎѾџњЍRћHЩјасёЦЩіЩѻЋe",
+		},
 	)
 }
