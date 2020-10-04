@@ -9,3 +9,6 @@ commands:
   lint:
     description: Lint the source code
     cmd: golangci-lint run
+  compile:
+    description: Compile all CLI binaries
+    cmd: go build -o feistel cmd/feistel/main.go
