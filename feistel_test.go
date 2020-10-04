@@ -9,7 +9,7 @@ func TestFeistel(t *testing.T) {
 	testCipher(
 		t,
 		cryptolabs.NewFeistel(
-			func(_, text, key rune) rune {
+			func(text, key rune) rune {
 				return text + key
 			},
 		),
