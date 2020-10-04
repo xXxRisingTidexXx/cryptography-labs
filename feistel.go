@@ -34,7 +34,7 @@ func (feistel *feistel) debugf(process string, i, j int, left, right rune) {
 	log.Debugf(
 		"cryptolabs: feistel %s, block %d, round %d, left %q / %x, right %q / %x",
 		process,
-		i / 2,
+		i/2,
 		j,
 		left,
 		left,
