@@ -13,11 +13,11 @@ type feistel struct {
 }
 
 func (feistel *feistel) Encrypt(text, key string) string {
-	if len(text) == 0 || len(key) == 0 || len(text)%2 == 1 {
+	textRunes, keyRunes := []rune(text), []rune(key)
+	if len(textRunes) == 0 || len(keyRunes) == 0 || len(textRunes)%2 == 1 {
 		log.Debugf("cryptolabs: feistel got insufficient input, returned no digest")
 		return text
 	}
-	textRunes, keyRunes := []rune(text), []rune(key)
 	newRunes := make([]rune, len(textRunes))
 	for i := 0; i < len(textRunes); i += 2 {
 		left, right := textRunes[i], textRunes[i+1]
@@ -44,11 +44,11 @@ func (feistel *feistel) debugf(process string, i, j int, left, right rune) {
 }
 
 func (feistel *feistel) Decrypt(text, key string) string {
-	if len(text) == 0 || len(key) == 0 || len(text)%2 == 1 {
+	textRunes, keyRunes := []rune(text), []rune(key)
+	if len(textRunes) == 0 || len(keyRunes) == 0 || len(textRunes)%2 == 1 {
 		log.Debugf("cryptolabs: feistel got insufficient input, returned no message")
 		return text
 	}
-	textRunes, keyRunes := []rune(text), []rune(key)
 	newRunes := make([]rune, len(textRunes))
 	for i := 0; i < len(textRunes); i += 2 {
 		left, right := textRunes[i], textRunes[i+1]
