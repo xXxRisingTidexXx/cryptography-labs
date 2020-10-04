@@ -8,6 +8,15 @@ import (
 func TestFeistel(t *testing.T) {
 	testCipher(
 		t,
-		cryptolabs.NewFeistel(),
+		cryptolabs.NewFeistel(
+			func(_, text, key rune) rune {
+				return text + key
+			},
+		),
+		spec{"", "", ""},
+		spec{"Hello, World!", "", "Hello, World!"},
+		spec{"", "Привіт, світ!", ""},
+		spec{"", "Привіт, світ!", ""},
+		spec{"hello", "qwerty", "{U\x1dZŸ"},
 	)
 }
