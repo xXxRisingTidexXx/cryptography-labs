@@ -14,6 +14,7 @@ type feistel struct {
 
 func (feistel *feistel) Encrypt(text, key string) string {
 	if len(text) == 0 || len(key) == 0 || len(text)%2 == 1 {
+		log.Debugf("cryptolabs: feistel got insufficient input, returned no digest")
 		return text
 	}
 	textRunes, keyRunes := []rune(text), []rune(key)
@@ -22,15 +23,29 @@ func (feistel *feistel) Encrypt(text, key string) string {
 		left, right := textRunes[i], textRunes[i+1]
 		for j := range keyRunes {
 			left, right = right^feistel.f(left, keyRunes[j]), left
+			feistel.debugf("encryption", i, j, left, right)
 		}
 		newRunes[i], newRunes[i+1] = left, right
-		log.WithFields(log.Fields{"process": "encryption"}).Debugf("cryptolabs: x")
 	}
 	return string(newRunes)
 }
 
+func (feistel *feistel) debugf(process string, i, j int, left, right rune) {
+	log.Debugf(
+		"cryptolabs: feistel %s, block %d, round %d, left %q / %x, right %q / %x",
+		process,
+		i / 2,
+		j,
+		left,
+		left,
+		right,
+		right,
+	)
+}
+
 func (feistel *feistel) Decrypt(text, key string) string {
 	if len(text) == 0 || len(key) == 0 || len(text)%2 == 1 {
+		log.Debugf("cryptolabs: feistel got insufficient input, returned no message")
 		return text
 	}
 	textRunes, keyRunes := []rune(text), []rune(key)
@@ -39,6 +54,7 @@ func (feistel *feistel) Decrypt(text, key string) string {
 		left, right := textRunes[i], textRunes[i+1]
 		for j := len(keyRunes) - 1; j >= 0; j-- {
 			left, right = right, left^feistel.f(right, keyRunes[j])
+			feistel.debugf("decryption", i, j, left, right)
 		}
 		newRunes[i], newRunes[i+1] = left, right
 	}
