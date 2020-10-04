@@ -8,6 +8,6 @@ func DES(text, key rune) rune {
 	return text ^ key
 }
 
-func Hypot(text, key rune) rune {
-	return text*text + key*key
+func AND(text, key rune) rune {
+	return text & key
 }

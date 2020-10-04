@@ -11,6 +11,7 @@ func main() {
 	textPath := flag.String("t", "examples/feistel.txt", "The input message file path")
 	keyPath := flag.String("k", "examples/feistel.key", "The key file path")
 	outputPath := flag.String("o", "examples/feistel.out", "The cipher output file path")
+	fName := flag.String("f", "magma", "F-function transforming runes")
 	isDecryption := flag.Bool("d", false, "Decrypt the input message")
 	isVerbose := flag.Bool("v", false, "Run the program in verbose mode")
 	flag.Parse()
@@ -31,7 +32,15 @@ func main() {
 		log.Debugf("main: feistel got odd-length message, appended %q to the end", last)
 		textRunes = append(textRunes, last)
 	}
-	cipher, output := cryptolabs.NewFeistel(cryptolabs.Magma), ""
+	f := cryptolabs.Magma
+	switch *fName {
+	case "des":
+		f = cryptolabs.DES
+	case "and":
+		f = cryptolabs.AND
+	default:
+	}
+	cipher, output := cryptolabs.NewFeistel(f), ""
 	if *isDecryption {
 		output = cipher.Decrypt(string(textRunes), string(key))
 	} else {
