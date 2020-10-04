@@ -9,8 +9,8 @@ func TestNModuloAddition(t *testing.T) {
 	testCipher(
 		t,
 		cryptolabs.NewNModuloAddition(cryptolabs.DefaultAlphabet),
-		&spec{"GRONSFELD", "Appveyorxnhjx892d1", "GЕГЖwГsВА"},
-		&spec{
+		spec{"GRONSFELD", "Appveyorxnhjx892d1", "GЕГЖwГsВА"},
+		spec{
 			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut " +
 				"labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco" +
 				" laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit " +
@@ -23,12 +23,12 @@ func TestNModuloAddition(t *testing.T) {
 				"tгfРУКгФТUmПkЮҐeАrшZnliEuyeЄxҐEoЙИzєНRЙУiКУabЛґcЙnГjVшkTvusЗnЙ!KQЖБГАзНПЦVбНМnцЩРЇАXuYoшX" +
 				"ntuvqmwwKzzЇRАєЧЄЇЄЩШXчlвЮЩSbДюXpgieEЖИbOrxrtБЄlpМГЧЄаЩМnцЧЯСІbІюVidf!uvIXКwKxlАЙВиХS",
 		},
-		&spec{
+		spec{
 			"aaaAAAAAaaaaaAAAaaaaaAAAAaaaAAAaaaAAAAAAAAAAaaaAAaaaaAAAAAaaAAaaAAAAaAAa",
 			"djndowsjnakjsdnjasbdibdhiashdioasd--jdsskaassaaBHJKKkaoisdj",
 			"ГЗЙdowsjЙАИЗОdnjАОБГЖbdhiАОЄdioАОГ--jdsskaasОААBHjkkИaoisdЗГjnГКwsjnАkjО",
 		},
-		&spec{
+		spec{
 			"Думи мої, думи мої, Лихо мені з вами! Нащо стали на папері Сумними рядами?.. Чом вас вітер не" +
 				" розвіяв В степу, як пилину? Чом вас лихо не приспало, Як свою дитину?...",
 			"Результати Оприлюднено",

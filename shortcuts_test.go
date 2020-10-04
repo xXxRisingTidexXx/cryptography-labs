@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func testCipher(t *testing.T, cipher cryptolabs.Cipher, specs ...*spec) {
+func testCipher(t *testing.T, cipher cryptolabs.Cipher, specs ...spec) {
 	for i := range specs {
 		if output := cipher.Encrypt(specs[i].text, specs[i].key); output != specs[i].output {
 			t.Errorf("cryptolabs_test: got invalid encrypted texts, %s != %s", output, specs[i].output)

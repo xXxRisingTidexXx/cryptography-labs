@@ -9,12 +9,12 @@ func TestGronsfeld(t *testing.T) {
 	testCipher(
 		t,
 		cryptolabs.NewGronsfeld(cryptolabs.DefaultAlphabet),
-		&spec{"", "", ""},
-		&spec{"Abeceda", "", "Abeceda"},
-		&spec{"", "нАдіЙний клЮч", ""},
-		&spec{"Невалідний ключ", "-sjfdls", "Невалідний ключ"},
-		&spec{"GRONSFELD", "2015", "IRPSUFFQF"},
-		&spec{
+		spec{"", "", ""},
+		spec{"Abeceda", "", "Abeceda"},
+		spec{"", "нАдіЙний клЮч", ""},
+		spec{"Невалідний ключ", "-sjfdls", "Невалідний ключ"},
+		spec{"GRONSFELD", "2015", "IRPSUFFQF"},
+		spec{
 			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut " +
 				"labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco" +
 				" laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit " +
@@ -28,12 +28,12 @@ func TestGronsfeld(t *testing.T) {
 				"tkgdeebВAjxrieiweА\"swr-ptprllqv,.АxrА\"nv!funqjAxxk pnimjpfAhhsgsГvА-oomtlx\"hsqq-if.nАА" +
 				"-nacwuytA",
 		},
-		&spec{
+		spec{
 			"aaaAAAAAaaaaaAAAaaaaaAAAAaaaAAAaaaAAAAAAAAAAaaaAAaaaaAAAAAaaAAaaAAAAaAAa",
 			"0123456789",
 			"abcDEFGHijabcDEFghijaBCDEfghIJAbcdEFGHIJABCDefgHIjabcDEFGHijABcdEFGHiJAb",
 		},
-		&spec{
+		spec{
 			"Думи мої, думи мої, Лихо мені з вами! Нащо стали на папері Сумними рядами?.. Чом вас вітер не" +
 				" розвіяв В степу, як пилину? Чом вас лихо не приспало, Як свою дитину?...",
 			"19203984138913",

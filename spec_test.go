@@ -10,6 +10,6 @@ type spec struct {
 	output string
 }
 
-func (spec *spec) String() string {
-	return fmt.Sprintf("{%s %s %s}", spec.text, spec.key, spec.output)
+func (s spec) String() string {
+	return fmt.Sprintf("{%s %s %s}", s.text, s.key, s.output)
 }

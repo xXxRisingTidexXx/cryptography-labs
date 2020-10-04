@@ -9,8 +9,8 @@ func TestTrithemius2(t *testing.T) {
 	testCipher(
 		t,
 		cryptolabs.NewTrithemius2(cryptolabs.DefaultAlphabet),
-		&spec{"", "", ""},
-		&spec{
+		spec{"", "", ""},
+		spec{
 			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut " +
 				"labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco" +
 				" laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit " +
@@ -23,7 +23,7 @@ func TestTrithemius2(t *testing.T) {
 				"БЄNНІЗПЛРВТЖXЧІПНЩdМЮЯПiПЦЬЮжбpЧеґжїаwвпzетзїдхЕсщстїЇщл хо?\"?ТТвHшюCH.KIЯLCIPґMBCBGFEYй" +
 				"JcYSOMgOiуeggчknlgceov?!xАuБBsyEpЖАДrKЗКГOІГҐЖГИГWЖИХЇЦЬФЮfЦЩЧШЦдmСвЮгrбЬuалнyібгнсхоЄ",
 		},
-		&spec{
+		spec{
 			"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
 			"",
 			"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzАБВГҐДЕЄЖЗИІЇЙКЛМНОПРС",
@@ -32,8 +32,8 @@ func TestTrithemius2(t *testing.T) {
 	testCipher(
 		t,
 		cryptolabs.NewTrithemius2(cryptolabs.UkrainianAlphabet),
-		&spec{"ПАРОЛЬ", "", "ПБТСПВ"},
-		&spec{
+		spec{"ПАРОЛЬ", "", "ПБТСПВ"},
+		spec{
 			"ТИХАВОДАГРЕБЛЮРВЕГОЛЦІНІДЕВПАСТИТИХІШЕВОДИНИЖЧЕТРАВИЯБЛУКОВІДЯБЛУНІ",
 			"The key",
 			"ТІЧГЕУІЄІЩМЇЧІБНТРГБЙЯЕБЩЮШЙШНПЖСИЦЙЮИЄФЇОЦРПЕПГВМПШОСГЇҐЗЧҐЯЧЬЇСМІ",
