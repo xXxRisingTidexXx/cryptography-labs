@@ -36,7 +36,10 @@ func main() {
 		log.Fatalf("main: gost2814789 failed to read the key, %v", err)
 	}
 	if modulo := len(text) % 8; modulo != 0 {
-		log.Debug("main: gost2814789 got incomplete message, padded with the last rune")
+		log.Debugf(
+			"main: gost2814789 got incomplete message, padded %d runes with the last char",
+			8-modulo,
+		)
 		for i := modulo; i < 8; i++ {
 			text = append(text, text[len(text)-1])
 		}
