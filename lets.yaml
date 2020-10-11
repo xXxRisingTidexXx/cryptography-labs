@@ -5,10 +5,14 @@ commands:
     cmd: gofmt -w -s .
   test:
     description: Run test specs
-    cmd: go clean -testcache && go test github.com/xXxRisingTidexXx/cryptography-labs
+    cmd: |
+      go clean -testcache
+      go test github.com/xXxRisingTidexXx/cryptography-labs
   lint:
     description: Lint the source code
     cmd: golangci-lint run
   compile:
     description: Compile all CLI binaries
-    cmd: go build -o feistel cmd/feistel/main.go
+    cmd: |
+      go build -o feistel cmd/feistel/main.go
+      go build -o gost2814789 cmd/gost2814789/main.go
