@@ -24,8 +24,8 @@ func main() {
 	if err != nil {
 		log.Fatalf("main: gost2814789 failed to read the sbox, %v", err)
 	}
-	if len(sbox) != 256 {
-		log.Fatalf("main: gost2814789 got sbox with invalid length, %d != 255", len(sbox))
+	if len(sbox) != 128 {
+		log.Fatalf("main: gost2814789 got sbox with invalid length, %d != 128", len(sbox))
 	}
 	text, err := ioutil.ReadFile(*textPath)
 	if err != nil {
