@@ -5,12 +5,12 @@ import (
 	log "github.com/sirupsen/logrus"
 )
 
-func NewGOST2814789(sbox SBox) Cipher {
+func NewGOST2814789(sbox *SBox) Cipher {
 	return &gost2814789{sbox}
 }
 
 type gost2814789 struct {
-	sbox SBox
+	sbox *SBox
 }
 
 func (gost *gost2814789) Encrypt(text, key string) string {
@@ -23,7 +23,7 @@ func (gost *gost2814789) Encrypt(text, key string) string {
 		left := binary.LittleEndian.Uint32(message[i : i+4])
 		right := binary.LittleEndian.Uint32(message[i+4 : i+8])
 		for j := 0; j < 32; j++ {
-			left, right = right^gost.f(left, subkeys[j]), left
+			left, right = right^gost.sbox.Get(left, subkeys[j]), left
 			gost.debugf("encryption", i, j, left, right)
 		}
 		binary.LittleEndian.PutUint32(output[i:i+4], left)
@@ -67,7 +67,7 @@ func (gost *gost2814789) Decrypt(text, key string) string {
 		left := binary.LittleEndian.Uint32(message[i : i+4])
 		right := binary.LittleEndian.Uint32(message[i+4 : i+8])
 		for j := 31; j >= 0; j-- {
-			left, right = right, left^gost.f(right, subkeys[j])
+			left, right = right, left^gost.sbox.Get(right, subkeys[j])
 			gost.debugf("decryption", i, j, left, right)
 		}
 		binary.LittleEndian.PutUint32(output[i:i+4], left)
