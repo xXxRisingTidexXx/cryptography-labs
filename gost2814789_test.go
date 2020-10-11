@@ -22,5 +22,25 @@ func TestNewGOST2814789(t *testing.T) {
 				},
 			),
 		),
+		spec{},
+		spec{"", "hello, world,:)!", ""},
+		spec{"hello, world,:)!", "", "hello, world,:)!"},
+		spec{"hello, world,:)!", "2123", "hello, world,:)!"},
+		spec{
+			"hello, world,:)!",
+			"3d91__23easHJsjbc-+j3ddnscjhs-32",
+			"\x1e!\xfa\xea\x93\xcf!\xd8\xe35\x19$\x00ҝ;",
+		},
+		spec{
+			"Криптографія - річ, що на найбільш явному місці тримає те, що має бути якнайглибше " +
+				"приховано.",
+			"9u9&87w3hdskJHGjhb_i1ocsnkjacj0<",
+			"jy\x17\x83\xde{O`\xd2e\xbf\xed\x1e\xb0\xea\xcc\x03\\&\xea3\xa5\x9aW\x90\xe45h\x17" +
+				"\x10@\x87I\x92\x8fb\x8aB\xf3{a?ωH}s\x13\xc7RV\x8e\xfbo\xf2\x14\x9c\xd0L\xc6a" +
+				"\x12r\xa1\bwԟ\xfd\x88Q.\"_\xfd\xef\x13\xf4\x1e$a%\xcc\xef\a\xdcԹ\xb6u{Ы\xb6" +
+				"\xf3Ȭ\x82Xt\x8b\x03\nY\x8e\xa2E\xfa\xbe\x02<_|\x9b \xa6\x05\xfb`P\x81\n->\xd7" +
+				"\xcei\xf3O\xae%&\xcab\xd8\x1d\xe8\xe7T-8\x8dI:ɲD\x99\xd9N\x95\x86%k\x8f\xef\xfd" +
+				"\x96tN\xac\xc5\xd4\x10{\f\x1a\xc8",
+		},
 	)
 }
