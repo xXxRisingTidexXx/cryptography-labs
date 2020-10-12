@@ -57,5 +57,6 @@ func main() {
 	if err := ioutil.WriteFile(*outputPath, []byte(output), 0600); err != nil {
 		log.Fatalf("main: gost2814789 failed to write the output, %v", err)
 	}
+	log.Debugf("main: gost2814789 yielded %q", output)
 	log.Debugf("main: gost2814789 finished in %s", time.Since(start))
 }
