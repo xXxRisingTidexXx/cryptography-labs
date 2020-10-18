@@ -8,6 +8,11 @@ import (
 func TestRSA(t *testing.T) {
 	testCipher(
 		t,
-		cryptolabs.NewRSA(5, 13, 37),
+		cryptolabs.NewRSA(4651, 7919, 6113),
+		spec{"", "", ""},
+		spec{"TE", "", "NRVBMB"},
+		spec{"CQ", "", "UDKZXB"},
+		spec{"HELLO", "", "OVDRG"},
+		spec{"DAYLO", "", "YXCFY"},
 	)
 }
