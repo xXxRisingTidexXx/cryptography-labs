@@ -1,8 +1,8 @@
 package cryptolabs
 
 var DefaultAlphabet = NewAlphabet(
-	"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzАБВГҐДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯабвгґдеєжзиіїйкл" +
-		"мнопрстуфхцчшщьюя .,-!?'\"",
+	"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzАБВГҐДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯабвгґд" +
+		"еєжзиіїйклмнопрстуфхцчшщьюя .,-!?'\"",
 )
 
 var EnglishAlphabet = NewAlphabet("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
