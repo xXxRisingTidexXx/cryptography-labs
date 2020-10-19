@@ -53,3 +53,20 @@ func pow64(a, b, c int64) int64 {
 	}
 	return x
 }
+
+func gcdRune(a, b rune) (rune, rune) {
+	gcd, x, _ := solveRune(modRune(a, b), b)
+	return gcd, modRune(x, b)
+}
+
+func modRune(a, b rune) rune {
+	return (a%b + b) % b
+}
+
+func solveRune(a, b rune) (rune, rune, rune) {
+	if a == 0 {
+		return b, 0, 1
+	}
+	gcd, x, y := solveRune(b%a, a)
+	return gcd, y - (b/a)*x, x
+}
