@@ -70,3 +70,14 @@ func solveRune(a, b rune) (rune, rune, rune) {
 	gcd, x, y := solveRune(b%a, a)
 	return gcd, y - (b/a)*x, x
 }
+
+func powRune(a, b, c rune) rune {
+	if c == 1 {
+		return 0
+	}
+	x := rune(1)
+	for i := rune(0); i < b; i++ {
+		x = modRune(x*a, c)
+	}
+	return x
+}
