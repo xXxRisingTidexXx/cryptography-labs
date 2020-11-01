@@ -5,6 +5,10 @@ func NewRSA(p, q, e int64) Cipher {
 	return &rsa{p * q, e, d}
 }
 
+func NewSignerRSA(n int64) Signer {
+	return &rsa{n: n}
+}
+
 type rsa struct {
 	n int64
 	e int64
@@ -30,4 +34,12 @@ func (rsa *rsa) transform(text string, key int64) string {
 
 func (rsa *rsa) Decrypt(text, _ string) string {
 	return rsa.transform(text, rsa.d)
+}
+
+func (rsa *rsa) Sign(m int64, d int64) int64 {
+	return pow64(m, d, rsa.n)
+}
+
+func (rsa *rsa) Verify(s int64, e int64) bool {
+	return s == pow64(s, e, rsa.n)
 }
