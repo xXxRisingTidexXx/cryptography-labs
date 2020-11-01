@@ -15,3 +15,11 @@ func testCipher(t *testing.T, cipher cryptolabs.Cipher, specs ...spec) {
 		}
 	}
 }
+
+func testSigner(t *testing.T, signer cryptolabs.Signer, docs ...doc) {
+	for i := range docs {
+		if !signer.Verify(signer.Sign(docs[i].m, docs[i].d), docs[i].e) {
+			t.Errorf("cryptolabs_test: got invalid signature for %v", docs)
+		}
+	}
+}
