@@ -36,10 +36,10 @@ func (rsa *rsa) Decrypt(text, _ string) string {
 	return rsa.transform(text, rsa.d)
 }
 
-func (rsa *rsa) Sign(m int64, d int64) int64 {
+func (rsa *rsa) Encode(m int64, d int64) int64 {
 	return pow64(m, d, rsa.n)
 }
 
-func (rsa *rsa) Verify(s int64, e int64) bool {
-	return s == pow64(s, e, rsa.n)
+func (rsa *rsa) Decode(s int64, e int64) int64 {
+	return pow64(s, e, rsa.n)
 }

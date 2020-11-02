@@ -1,6 +1,6 @@
 package cryptolabs
 
 type Signer interface {
-	Sign(int64, int64) int64
-	Verify(int64, int64) bool
+	Encode(int64, int64) int64
+	Decode(int64, int64) int64
 }

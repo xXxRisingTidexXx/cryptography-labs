@@ -16,10 +16,19 @@ func testCipher(t *testing.T, cipher cryptolabs.Cipher, specs ...spec) {
 	}
 }
 
-func testSigner(t *testing.T, signer cryptolabs.Signer, docs ...doc) {
+func testEncode(t *testing.T, signer cryptolabs.Signer, docs ...doc) {
 	for i := range docs {
-		if !signer.Verify(signer.Sign(docs[i].m, docs[i].d), docs[i].e) {
-			t.Errorf("cryptolabs_test: got invalid signature for %v", docs)
+		s := signer.Encode(docs[i].m, docs[i].d)
+		if signer.Decode(s, docs[i].e) != docs[i].m {
+			t.Errorf("cryptolabs_test: got invalid encoding for %v, %d", docs[i], s)
+		}
+	}
+}
+
+func testDecode(t *testing.T, signer cryptolabs.Signer, signs ...sign) {
+	for i := range signs {
+		if m := signer.Decode(signs[i].s, signs[i].e); m != signs[i].m {
+			t.Errorf("cryptolabs_test: got invalid decoding for %v, %d", signs[i], m)
 		}
 	}
 }
