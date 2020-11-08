@@ -17,6 +17,9 @@ func TestRSA(t *testing.T) {
 	)
 	testEncode(t, cryptolabs.NewSignerRSA(91), doc{7, 29, 5})
 	testEncode(t, cryptolabs.NewSignerRSA(55), doc{13, 27, 3})
-	// Struct sign{29, 11, 9} must fail.
-	testDecode(t, cryptolabs.NewSignerRSA(93), sign{12, 11, 21}, sign{67, 11, 25})
+	signer := cryptolabs.NewSignerRSA(93)
+	testDecode(t, signer, sign{12, 11, 21}, sign{67, 11, 25})
+	if signer.Decode(29, 11) == 9 {
+		t.Errorf("cryptolabs_test: got false positive decoding")
+	}
 }
