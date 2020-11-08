@@ -14,16 +14,13 @@ func TestDSS(t *testing.T) {
 	if s := signer.Encode(m, 0); !signer.Verify(s, m) {
 		t.Errorf("cryptolabs_test: got unverification for s = %d", s)
 	}
-	signer = cryptolabs.NewExplicitDSS(271, 27, 106, 28, 7)
-	if !signer.Verify(3, 17) {
+	if !cryptolabs.NewExplicitDSS(271, 27, 106, 28, 7).Verify(3, 17) {
 		t.Errorf("cryptolabs_test: got unverification")
 	}
-	signer = cryptolabs.NewExplicitDSS(271, 27, 106, 28, 13)
-	if signer.Verify(8, 17) {
+	if cryptolabs.NewExplicitDSS(271, 27, 106, 28, 13).Verify(8, 17) {
 		t.Errorf("cryptolabs_test: got verification")
 	}
-	signer = cryptolabs.NewExplicitDSS(271, 27, 106, 28, 17)
-	if !signer.Verify(10, 17) {
+	if !cryptolabs.NewExplicitDSS(271, 27, 106, 28, 17).Verify(10, 17) {
 		t.Errorf("cryptolabs_test: got unverification")
 	}
 }
