@@ -24,7 +24,7 @@ func (dss *dss) Encode(m, _ int64) int64 {
 }
 
 func (dss *dss) Decode(_, _ int64) int64 {
-	return 0
+	panic("implement me")
 }
 
 func (dss *dss) Verify(s, m int64) bool {
