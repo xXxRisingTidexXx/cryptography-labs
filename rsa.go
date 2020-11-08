@@ -43,3 +43,7 @@ func (rsa *rsa) Encode(m int64, d int64) int64 {
 func (rsa *rsa) Decode(s int64, e int64) int64 {
 	return pow64(s, e, rsa.n)
 }
+
+func (rsa *rsa) Verify(_, _ int64) bool {
+	return false
+}
