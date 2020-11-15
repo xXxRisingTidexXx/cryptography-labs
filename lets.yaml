@@ -16,3 +16,4 @@ commands:
     cmd: |
       go build -o feistel cmd/feistel/main.go
       go build -o gost2814789 cmd/gost2814789/main.go
+      go build -o additive cmd/additive/main.go
