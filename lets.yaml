@@ -18,3 +18,4 @@ commands:
       go build -o gost2814789 cmd/gost2814789/main.go
       go build -o additive cmd/additive/main.go
       go build -o lsb cmd/lsb/main.go
+      go build -o ladon cmd/ladon/main.go

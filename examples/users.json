@@ -1,0 +1,65 @@
+{
+  "scotch": {
+    "password": "edinburgh",
+    "likes_cakes": false,
+    "washes_hands": true,
+    "drives_car": false,
+    "eats_junk_food": false
+  },
+  "irish": {
+    "password": "dublin",
+    "likes_cakes": true,
+    "washes_hands": true,
+    "drives_car": false,
+    "eats_junk_food": true
+  },
+  "tequila": {
+    "password": "mexico",
+    "likes_cakes": false,
+    "washes_hands": false,
+    "drives_car": false,
+    "eats_junk_food": false
+  },
+  "gin": {
+    "password": "london",
+    "likes_cakes": false,
+    "washes_hands": false,
+    "drives_car": true,
+    "eats_junk_food": false
+  },
+  "cognac": {
+    "password": "paris",
+    "likes_cakes": false,
+    "washes_hands": true,
+    "drives_car": false,
+    "eats_junk_food": false
+  },
+  "vodka": {
+    "password": "moscow",
+    "likes_cakes": true,
+    "washes_hands": false,
+    "drives_car": false,
+    "eats_junk_food": true
+  },
+  "sake": {
+    "password": "tokyo",
+    "likes_cakes": true,
+    "washes_hands": true,
+    "drives_car": true,
+    "eats_junk_food": false
+  },
+  "bear": {
+    "password": "prague",
+    "likes_cakes": true,
+    "washes_hands": true,
+    "drives_car": true,
+    "eats_junk_food": true
+  },
+  "wine": {
+    "password": "athens",
+    "likes_cakes": false,
+    "washes_hands": false,
+    "drives_car": true,
+    "eats_junk_food": true
+  }
+}
